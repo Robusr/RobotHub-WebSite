@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        {% for obj in queryset %}
+            <div class="page-header">
+                <h1>主观题部分 <small>一共有2道思考题，每道题计分20分</small></h1>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="panel panel-info">
+                    <div class="panel-heading">第1题<span style="float: right" class="glyphicon glyphicon-tags"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_A }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                        <textarea class="form-control" rows="3" placeholder="请输入适当的答案" name="qA"></textarea>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">第2题<span style="float: right" class="glyphicon glyphicon-tags"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_B }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                        <textarea class="form-control" rows="3" placeholder="请输入适当的答案" name="qB"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4" style="margin-bottom: 100px">
+                    <button type="submit" class="btn btn-success">
+                        <span class="glyphicon glyphicon-floppy-saved"></span>
+                        提交答案
+                    </button>
+                </div>
+            </form>
+        {% endfor %}
+    </div>
+{% endblock %}

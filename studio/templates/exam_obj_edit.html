@@ -1,0 +1,287 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>客观题部分 <small>题目编辑</small></h1>
+        </div>
+        <form action="" method="post">
+            <div class="panel panel-warning">
+                <div class="panel-heading">第1题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="判断题题目信息"
+                              name="q1">{{ row_object.Question_1 }}</textarea>
+                    <h4>答案</h4>
+                    <label style="margin-right: 50px">
+                        <input type="radio" name="ans1" value="T">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="ans1" value="F">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-warning">
+                <div class="panel-heading">第2题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="判断题题目信息"
+                              name="q2">{{ row_object.Question_2 }}</textarea>
+                    <h4>答案</h4>
+                    <label style="margin-right: 50px">
+                        <input type="radio" name="ans2" value="T">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="ans2" value="F">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-warning">
+                <div class="panel-heading">第3题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="判断题题目信息"
+                              name="q3">{{ row_object.Question_3 }}</textarea>
+                    <h4>答案</h4>
+                    <label style="margin-right: 50px">
+                        <input type="radio" name="ans3" value="T">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="ans3" value="F">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-warning">
+                <div class="panel-heading">第4题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="判断题题目信息"
+                              name="q4">{{ row_object.Question_4 }}</textarea>
+                    <h4>答案</h4>
+                    <label style="margin-right: 50px">
+                        <input type="radio" name="ans4" value="T">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="ans4" value="F">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-warning">
+                <div class="panel-heading">第5题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="判断题题目信息"
+                              name="q5">{{ row_object.Question_5 }}</textarea>
+                    <h4>答案</h4>
+                    <label style="margin-right: 50px">
+                        <input type="radio" name="ans5" value="T">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="ans5" value="F">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">第6题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="单项选择题题目信息"
+                              name="q6">{{ row_object.Question_6 }}</textarea>
+                    <h4>答案</h4>
+                    <label>
+                        <input type="radio" name="ans6" value="A">
+                        A、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q6A"
+                                 value="{{ row_object.Question_6_A }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans6" value="B">
+                        B、<input type="text" class="form-control" id="" placeholder="B选项内容" name="q6B"
+                                 value="{{ row_object.Question_6_B }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans6" value="C">
+                        C、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q6C"
+                                 value="{{ row_object.Question_6_C }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans6" value="D">
+                        D、<input type="text" class="form-control" id="" placeholder="C选项内容" name="q6D"
+                                 value="{{ row_object.Question_6_D }}">
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">第7题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="单项选择题题目信息"
+                              name="q7">{{ row_object.Question_7 }}</textarea>
+                    <h4>答案</h4>
+                    <label>
+                        <input type="radio" name="ans7" value="A">
+                        A、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q7A"
+                                 value="{{ row_object.Question_7_A }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans7" value="B">
+                        B、<input type="text" class="form-control" id="" placeholder="B选项内容" name="q7B"
+                                 value="{{ row_object.Question_7_B }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans7" value="C">
+                        C、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q7C"
+                                 value="{{ row_object.Question_7_C }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans7" value="D">
+                        D、<input type="text" class="form-control" id="" placeholder="C选项内容" name="q7D"
+                                 value="{{ row_object.Question_7_D }}">
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">第8题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="单项选择题题目信息"
+                              name="q8">{{ row_object.Question_8 }}</textarea>
+                    <h4>答案</h4>
+                    <label>
+                        <input type="radio" name="ans8" value="A">
+                        A、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q8A"
+                                 value="{{ row_object.Question_8_A }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans8" value="B">
+                        B、<input type="text" class="form-control" id="" placeholder="B选项内容" name="q8B"
+                                 value="{{ row_object.Question_8_B }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans8" value="C">
+                        C、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q8C"
+                                 value="{{ row_object.Question_8_C }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans8" value="D">
+                        D、<input type="text" class="form-control" id="" placeholder="C选项内容" name="q8D"
+                                 value="{{ row_object.Question_8_D }}">
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">第9题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="单项选择题题目信息"
+                              name="q9">{{ row_object.Question_9 }}</textarea>
+                    <h4>答案</h4>
+                    <label>
+                        <input type="radio" name="ans9" value="A">
+                        A、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q9A"
+                                 value="{{ row_object.Question_9_A }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans9" value="B">
+                        B、<input type="text" class="form-control" id="" placeholder="B选项内容" name="q9B"
+                                 value="{{ row_object.Question_9_B }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans9" value="C">
+                        C、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q9C"
+                                 value="{{ row_object.Question_9_C }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans9" value="D">
+                        D、<input type="text" class="form-control" id="" placeholder="C选项内容" name="q9D"
+                                 value="{{ row_object.Question_9_D }}">
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">第10题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 10px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="单项选择题题目信息"
+                              name="q10">{{ row_object.Question_10 }}</textarea>
+                    <h4>答案</h4>
+                    <label>
+                        <input type="radio" name="ans10" value="A">
+                        A、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q10A"
+                                 value="{{ row_object.Question_10_A }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans10" value="B">
+                        B、<input type="text" class="form-control" id="" placeholder="B选项内容" name="q10B"
+                                 value="{{ row_object.Question_10_B }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans10" value="C">
+                        C、<input type="text" class="form-control" id="" placeholder="A选项内容" name="q10C"
+                                 value="{{ row_object.Question_10_C }}">
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ans10" value="D">
+                        D、<input type="text" class="form-control" id="" placeholder="C选项内容" name="q10D"
+                                 value="{{ row_object.Question_10_D }}">
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4" style="margin-bottom: 100px">
+                <button type="submit" class="btn btn-success">
+                    <span class="glyphicon glyphicon-floppy-saved"></span>
+                    保存
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

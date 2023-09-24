@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>主观题部分 <small>题目编辑</small></h1>
+        </div>
+        <form action="" method="post">
+            <div class="panel panel-info">
+                <div class="panel-heading">第1题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 40px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="思考题题目信息"
+                              name="qA">{{ row_object.Question_A }}</textarea>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">第1题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+                </div>
+                <div class="panel-body">
+                </div>
+                {% csrf_token %}
+                <div style="margin-left: 20px;margin-bottom: 40px;margin-right: 20px">
+                    <h4>题目</h4>
+                    <textarea class="form-control" rows="3" placeholder="思考题题目信息"
+                              name="qB">{{ row_object.Question_B }}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4" style="margin-bottom: 100px">
+                <button type="submit" class="btn btn-success">
+                    <span class="glyphicon glyphicon-floppy-saved"></span>
+                    保存
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

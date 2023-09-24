@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ user_name }}的客观题答案评分</h1>
+        </div>
+        <form action="" method="post">
+        <div class="panel panel-info">
+            <div class="panel-heading">第11题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+            </div>
+            <div class="panel-body">
+            </div>
+            {% csrf_token %}
+            <div style="margin-left: 20px;margin-bottom: 40px;margin-right: 20px">
+                <label>答案</label>
+                <h4>{{ user_result_A }}</h4>
+                <label>得分</label><input type="text" class="form-control" id="" placeholder="第11题得分" name="qA">
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">第11题<span style="float: right" class="glyphicon glyphicon-edit"></span>
+            </div>
+            <div class="panel-body">
+            </div>
+            {% csrf_token %}
+            <div style="margin-left: 20px;margin-bottom: 40px;margin-right: 20px">
+                <label>答案</label>
+                <h4>{{ user_result_B }}</h4>
+                <label>得分</label>
+                <input type="text" class="form-control" id="" placeholder="第12题得分" name="qB">
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4" style="margin-bottom: 100px">
+            <button type="submit" class="btn btn-success">
+                <span class="glyphicon glyphicon-floppy-saved"></span>
+                保存分数
+            </button>
+        </div>
+        </form>
+    </div>
+{% endblock %}

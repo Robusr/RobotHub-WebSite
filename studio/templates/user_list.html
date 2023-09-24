@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <div style="margin-bottom: 20px">
+            <a class="btn btn-success" href="/user/add" target="_blank" style="display: {{ admin_operate_state }}">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+                添加成员
+            </a>
+            <div style="float: right;display: {{ admin_operate_state }}" class="col-md-4">
+                <form method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="搜索成员ID" name="q" value="{{ search_data }}">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <div class="panel panel-info">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-user"></span>
+                    固原一中机器人创新工作室成员列表
+                </div>
+                <!-- Table -->
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>姓名</th>
+                        <th style="display: {{ admin_operate_state }}">用户名</th>
+                        <th>性别</th>
+                        <th style="display: {{ admin_operate_state }}">密码</th>
+                        <th>加入时间</th>
+                        <th>职能</th>
+                        <th style="display: {{ admin_operate_state }}">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for obj in queryset %}
+                        <tr>
+                            <td>{{ obj.id }}</td>
+                            <td>{{ obj.name }}</td>
+                            <td style="display: {{ admin_operate_state }}">{{ obj.username }}</td>
+                            <td>{{ obj.get_gender_display }}</td>
+                            <td style="display: {{ admin_operate_state }}">********</td>
+                            <td>{{ obj.create_time|date:"Y-m-d" }}</td>
+                            <td>{{ obj.depart.title }}</td>
+                            <td style="display: {{ admin_operate_state }}">
+                                <a href="/user/{{ obj.id }}/edit/" class="btn btn-primary btn-xs">编辑</a>
+                                <a href="/user/{{ obj.id }}/delete/" class="btn btn-danger btn-xs">删除</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                </table>
+                <div>
+                    <ul class="pagination">
+                        {{ page_string }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,235 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        {% for obj in queryset %}
+            <div class="page-header">
+                <h1>客观题部分 <small>一共有5道判断题和5道单项选择题，每道题计分6分</small></h1>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="panel panel-warning">
+                    <div class="panel-heading">第1题<span style="float: right" class="glyphicon glyphicon-tasks"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_1 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label style="margin-right: 50px">
+                            <input type="radio" name="q1" value="T">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="F">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">第2题<span style="float: right" class="glyphicon glyphicon-tasks"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_2 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label style="margin-right: 50px">
+                            <input type="radio" name="q2" value="T">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="F">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">第3题<span style="float: right" class="glyphicon glyphicon-tasks"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_3 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label style="margin-right: 50px">
+                            <input type="radio" name="q3" value="T">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="F">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">第4题<span style="float: right" class="glyphicon glyphicon-tasks"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_4 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label style="margin-right: 50px">
+                            <input type="radio" name="q4" value="T">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="F">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">第5题<span style="float: right"
+                                                        class="glyphicon glyphicon-tasks"></span></div>
+                    <div class="panel-body">
+                        {{ obj.Question_5 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label style="margin-right: 50px">
+                            <input type="radio" name="q5" value="T">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="F">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">第6题<span style="float: right"
+                                                        class="glyphicon glyphicon-equalizer"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_6 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label>
+                            <input type="radio" name="q6" value="A">
+                            A、{{ obj.Question_6_A }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q6" value="B">
+                            B、{{ obj.Question_6_B }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q6" value="C">
+                            C、{{ obj.Question_6_C }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q6" value="D">
+                            D、{{ obj.Question_6_D }}
+                        </label>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">第7题<span style="float: right"
+                                                        class="glyphicon glyphicon-equalizer"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_7 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label>
+                            <input type="radio" name="q7" value="A">
+                            A、{{ obj.Question_7_A }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q7" value="B">
+                            B、{{ obj.Question_7_B }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q7" value="C">
+                            C、{{ obj.Question_7_C }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q7" value="C">
+                            D、{{ obj.Question_7_D }}
+                        </label>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">第8题<span style="float: right"
+                                                        class="glyphicon glyphicon-equalizer"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_8 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label>
+                            <input type="radio" name="q8" value="A">
+                            A、{{ obj.Question_8_A }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q8" value="B">
+                            B、{{ obj.Question_8_B }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q8" value="C">
+                            C、{{ obj.Question_8_C }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q8" value="D">
+                            D、{{ obj.Question_8_D }}
+                        </label>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">第9题<span style="float: right"
+                                                        class="glyphicon glyphicon-equalizer"></span>
+                    </div>
+                    <div class="panel-body">
+                        {{ obj.Question_9 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label>
+                            <input type="radio" name="q9" value="A">
+                            A、{{ obj.Question_9_A }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q9" value="B">
+                            B、{{ obj.Question_9_B }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q9" value="C">
+                            C、{{ obj.Question_9_C }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q9" value="D">
+                            D、{{ obj.Question_9_D }}
+                        </label>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">第10题<span style="float: right"
+                                                         class="glyphicon glyphicon-equalizer"></span>
+                    </div>
+                    <div class="panel-body">
+                       {{ obj.Question_10 }}
+                    </div>
+                    <div style="margin-left: 20px;margin-bottom: 10px">
+                        <label>
+                            <input type="radio" name="q10" value="A">
+                            A、{{ obj.Question_10_A }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q10" value="B">
+                            B、{{ obj.Question_10_B }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q10" value="C">
+                            C、{{ obj.Question_10_C }}
+                        </label><br>
+                        <label>
+                            <input type="radio" name="q10" value="D">
+                            D、{{ obj.Question_10_D }}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4" style="margin-bottom: 100px">
+                    <button type="submit" class="btn btn-success">
+                        <span class="glyphicon glyphicon-floppy-saved"></span>
+                        提交答案
+                    </button>
+                </div>
+            </form>
+        {% endfor %}
+    </div>
+{% endblock %}
