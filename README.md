@@ -1,6 +1,6 @@
 <div align="center">
 
-# RobotHub-WebSite
+# RobotHub WebSite
 
 </div>
 
